@@ -1,0 +1,7 @@
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\bin\Debug\LibraryProject.exe.config
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\bin\Debug\LibraryProject.exe
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\bin\Debug\LibraryProject.pdb
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\obj\Debug\LibraryProject.csprojAssemblyReference.cache
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\obj\Debug\LibraryProject.csproj.CoreCompileInputs.cache
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\obj\Debug\LibraryProject.exe
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProject\obj\Debug\LibraryProject.pdb
