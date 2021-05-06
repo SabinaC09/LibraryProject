@@ -8,42 +8,39 @@ namespace LibraryProject
 {
     class Library
     {
-        private List<Book> library;
+        private Dictionary<Book, int> library;
         private List<Loan> loans;
         
 
-        internal List<Book> LibraryList { get => library; set => library = value; }
+        internal Dictionary<Book, int> LibraryList { get => library; set => library = value; }
         internal List<Loan> LoansList { get => loans; set => loans = value; }
 
-        public Library(List<Book> library, List<Loan> loans)
+        public Library(Dictionary<Book, int> library, List<Loan> loans)
         {
             this.library = library;
             this.loans = loans;
         }
 
-        public void AddBookToLibrary(string name, string isbn, double price, int number)
+        public void AddBookToLibrary(string name, string isbn, double price)
         {
-            Book book = BookFactory.CreateBook(name, isbn, price, number);
+            Book book = BookFactory.CreateBook(name, isbn, price);
             if (book != null)
             {
                 if (LibraryList.Count == 0)
                 {
-                    LibraryList.Add(book);
+                    LibraryList.Add(book, 1);
                 }
                 else
                 {
-                    foreach (Book b in LibraryList)
-                    {
-                        if (isbn.Equals(b.Isbn))
-                        {
-                            b.Number++;
-                            break;
-                        }
-                    }
-                    LibraryList.Add(book);
+                    if (LibraryList.ContainsKey(book))
+                        LibraryList[book] += 1;
+                    else
+                        LibraryList.Add(book, 1);
                 }
             }
         }
+
+        
 
         public void LoanBook(Person person, Book book)
         {
@@ -69,18 +66,18 @@ namespace LibraryProject
 
         bool CheckIfBookAvailable(Book book)
         {
-            int available = book.Number;
-            foreach(Loan loan in loans)
-            {
-                if(loan.Book.Name.Equals(book.Name))
-                {
-                    available--;
-                }
-            }
-            if (available > 0)
-                return true;
-            else 
-                return false;
+            //int available = book.Number;
+            //foreach(Loan loan in loans)
+            //{
+            //    if(loan.Book.Name.Equals(book.Name))
+            //    {
+            //        available--;
+            //    }
+            //}
+            //if (available > 0)
+            //    return true;
+            //else 
+               return false;
         }
 
         bool CheckForPenalty(Loan loan)

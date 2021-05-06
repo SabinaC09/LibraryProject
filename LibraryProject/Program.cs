@@ -15,14 +15,15 @@ namespace LibraryProject
             Person person1 = new Person("Alexandru", "Popescu", "1563254785214");
 
             //add book to library 
-            Library library = new Library(new List<Book>(), new List<Loan>());
-            library.AddBookToLibrary("abc", "2547852000369", 120, 1);
-            library.AddBookToLibrary("abc", "2547852000369", 120, 1);
-            library.AddBookToLibrary("dddc", "aaaa", 120, 1);
+            Library library = new Library(new Dictionary<Book, int>(), new List<Loan>());
+            library.AddBookToLibrary("abc", "2547852000369", 120);
+            library.AddBookToLibrary("abc", "2547852000369", 120);
+            library.AddBookToLibrary("dddc", "aaaa", 120);
 
-            foreach(Book book in library.LibraryList)
+            foreach(Book book in library.LibraryList.Keys)
             {
-                Console.WriteLine(book);
+                Console.WriteLine(book.Name + " "+ library.LibraryList[book]);
+                
             }
 
             

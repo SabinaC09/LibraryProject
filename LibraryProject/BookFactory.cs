@@ -8,21 +8,19 @@ namespace LibraryProject
 {
     class BookFactory
     {
-        public static Book CreateBook(string name, string isbn, double price, int number)
+        public static Book CreateBook(string name, string isbn, double price)
         {
-            return CheckBookData(isbn, price, number) ? new Book(name, isbn, price, number) : null;
+            return CheckBookData(isbn, price) ? new Book(name, isbn, price) : null;
         }
 
-        static bool CheckBookData(string isbn, double price, int number)
+        static bool CheckBookData(string isbn, double price)
         {
             //validare date carte
             if (int.TryParse(isbn, out _) || isbn.Length != 13)
                 return false;
             else if (price <= 0 || price > 500)
                 return false;
-            else if (number <= 0 || number > 1000)
-                return false;
-            else
+            else 
                 return true;
         }
     }

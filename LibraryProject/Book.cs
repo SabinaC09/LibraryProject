@@ -11,19 +11,34 @@ namespace LibraryProject
         private String name;
         private String isbn;
         private Double price;
-        private int number;
 
-        public Book(string name, string isbn, double price, int number)
+        public Book(string name, string isbn, double price)
         {
             this.Name = name;
             this.Isbn = isbn;
             this.Price = price;
-            this.Number = number;
         }
 
         public string Name { get => name; set => name = value; }
         public string Isbn { get => isbn; set => isbn = value; }
         public double Price { get => price; set => price = value; }
-        public int Number { get => number; set => number = value; }
+
+        public override bool Equals(object obj)
+        {
+            var otherBook = obj as Book;
+
+            if (otherBook == null)
+            {
+                return false;
+            }
+
+            return this.Isbn.Equals(otherBook.Isbn);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Isbn.GetHashCode();
+        }
+
     }
 }
