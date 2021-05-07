@@ -32,6 +32,8 @@ namespace LibraryProject
             library.ViewCopies(book1);
 
             //loan from library 
+            library.LoanBook(person1, book1);
+            library.LoanBook(person1, "2547852000369");
             //return to library
             //unit tests
 

@@ -69,10 +69,28 @@ namespace LibraryProject
 
         public void LoanBook(Person person, Book book)
         {
-            if(CheckIfBookAvailable(book))
+            if (LibraryList.ContainsKey(book) && LibraryList[book] > 0)
             {
-                Loan loan = new Loan(person, book, DateTime.Now);
+                LoansList.Add(new Loan(person, book, DateTime.Today));
+                LibraryList[book] -= 1;
+                Console.WriteLine("Book loan successful!");
             }
+            else
+                Console.WriteLine("There are no available copies for this book");
+        }
+        public void LoanBook(Person person, string isbn)
+        {
+            foreach (KeyValuePair<Book, int> book in LibraryList)
+            {
+                if (book.Key.Isbn.Equals(isbn) && book.Value > 0)
+                {
+                    LoansList.Add(new Loan(person, book.Key, DateTime.Today));
+                    LibraryList[book.Key] -= 1;
+                    Console.WriteLine("Book loan successful!");
+                    break;
+                }
+            }
+            //Console.WriteLine("There are no available copies for this book");
         }
 
         public void ReturnBook(Person person, Book book)
@@ -87,22 +105,6 @@ namespace LibraryProject
                     }
                 }
             }
-        }
-
-        bool CheckIfBookAvailable(Book book)
-        {
-            //int available = book.Number;
-            //foreach(Loan loan in loans)
-            //{
-            //    if(loan.Book.Name.Equals(book.Name))
-            //    {
-            //        available--;
-            //    }
-            //}
-            //if (available > 0)
-            //    return true;
-            //else 
-               return false;
         }
 
         bool CheckForPenalty(Loan loan)
