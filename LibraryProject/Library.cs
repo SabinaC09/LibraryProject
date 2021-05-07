@@ -40,7 +40,32 @@ namespace LibraryProject
             }
         }
 
-        
+        public void ViewAllBooks()
+        {
+            foreach (KeyValuePair<Book, int> book in LibraryList)
+            {
+                Console.WriteLine(book.Key.ToString() + " Copies:" + book.Value);
+            }
+        }
+
+        public void ViewCopies(Book book)
+        {
+            if (LibraryList.ContainsKey(book))
+                Console.WriteLine("Copies available: " + LibraryList[book]);
+            else
+                Console.WriteLine("This book is not in the library");
+        }
+
+        public void ViewCopies(string isbn)
+        {
+            foreach (KeyValuePair<Book, int> book in LibraryList)
+            {
+                if (book.Key.Isbn.Equals(isbn))
+                    Console.WriteLine("Copies available: " + book.Value);
+                else
+                    Console.WriteLine("This book is not in the library");
+            }
+        }
 
         public void LoanBook(Person person, Book book)
         {

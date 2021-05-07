@@ -48,6 +48,7 @@
     <Compile Include="Loan.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

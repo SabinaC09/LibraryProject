@@ -40,5 +40,10 @@ namespace LibraryProject
             return this.Isbn.GetHashCode();
         }
 
+        public override string ToString()
+        {
+            return string.Format("Name: {0} ISBN: {1} Price: {2}", name, isbn, price);
+        }
+
     }
 }
