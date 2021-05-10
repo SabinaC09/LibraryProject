@@ -24,21 +24,32 @@ namespace LibraryProject
 
             //view books in the library
             library.ViewAllBooks();
-            
 
+            Console.WriteLine();
             //view available copies
             library.ViewCopies("2547852000369");
             Book book1 = BookFactory.CreateBook("abc", "2547852000369", 120);
             library.ViewCopies(book1);
+            Console.WriteLine();
 
             //loan from library 
             library.LoanBook(person1, book1);
             library.LoanBook(person1, "2547852000369");
-            //return to library
-            //unit tests
+            Console.WriteLine();
 
+            //return to library
+            library.ReturnBook(person1, book1);
+            Console.WriteLine();
+
+            library.LoanBook(person1, book1, new DateTime(2021, 4, 10));
+            library.ReturnBook(person1, book1);
+            Console.WriteLine();
+
+            //No penalty to be paid. x2
+
+            //unit tests
         }
 
-        
+
     }
 }
