@@ -60,7 +60,9 @@ namespace LibraryProject
                 cnp[6] * 3 + cnp[7] * 5 + cnp[8] * 8 + cnp[9] * 2 + cnp[10] * 7 + cnp[11] * 9;
             if (sum % 11 < 10 && sum % 11 == cnp[12])
                 return true;
-            else 
+            else if (sum % 11 == 10 && cnp[12] == 1)
+                return true;
+            else
                 return false;
         }
     }

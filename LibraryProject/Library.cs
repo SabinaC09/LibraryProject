@@ -175,7 +175,7 @@ namespace LibraryProject
             int daysPassed = (DateTime.Now - loan.LoanDate).Days;
             if (daysPassed > 14 )
             {
-                double penalty = 0.01 * loan.Book.Price / (daysPassed - 14);
+                double penalty = 0.01 * loan.Book.Price * (daysPassed - 14);
                 Console.WriteLine("Penalty: {0}", penalty);
             }
             else
