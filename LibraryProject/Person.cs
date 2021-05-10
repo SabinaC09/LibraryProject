@@ -22,5 +22,21 @@ namespace LibraryProject
         public string Firstname { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
         public string Cnp { get => cnp; set => cnp = value; }
+        public override bool Equals(object obj)
+        {
+            var otherPerson = obj as Person;
+
+            if (otherPerson == null)
+            {
+                return false;
+            }
+
+            return this.Cnp.Equals(otherPerson.cnp);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.cnp.GetHashCode();
+        }
     }
 }

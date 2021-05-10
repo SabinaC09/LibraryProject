@@ -9,13 +9,13 @@ namespace LibraryProject
     class Library
     {
         private Dictionary<Book, int> library;
-        private List<Loan> loans;
+        private Dictionary<Person, List<Loan>> loans;
         
 
         internal Dictionary<Book, int> LibraryList { get => library; set => library = value; }
-        internal List<Loan> LoansList { get => loans; set => loans = value; }
+        internal Dictionary<Person, List<Loan>> LoansList { get => loans; set => loans = value; }
 
-        public Library(Dictionary<Book, int> library, List<Loan> loans)
+        public Library(Dictionary<Book, int> library, Dictionary<Person, List<Loan>> loans)
         {
             this.library = library;
             this.loans = loans;
@@ -71,9 +71,20 @@ namespace LibraryProject
         {
             if (LibraryList.ContainsKey(book) && LibraryList[book] > 0)
             {
-                LoansList.Add(new Loan(person, book, DateTime.Today));
-                LibraryList[book] -= 1;
-                Console.WriteLine("Book loan successful!");
+                if (LoansList.ContainsKey(person))
+                {
+
+                    LoansList[person].Add(new Loan(book, DateTime.Today));
+                    Console.WriteLine("Book loan successful!");
+                } else
+                {
+                    List<Loan> loans = new List<Loan>();
+                    loans.Add(new Loan(book, DateTime.Today));
+                    LoansList.Add(person, loans);
+                    LibraryList[book] -= 1;
+                    Console.WriteLine("Book loan successful!");
+                }             
+                
             }
             else
                 Console.WriteLine("There are no available copies for this book");
@@ -84,10 +95,21 @@ namespace LibraryProject
             {
                 if (book.Key.Isbn.Equals(isbn) && book.Value > 0)
                 {
-                    LoansList.Add(new Loan(person, book.Key, DateTime.Today));
-                    LibraryList[book.Key] -= 1;
-                    Console.WriteLine("Book loan successful!");
-                    break;
+                    if (LoansList.ContainsKey(person))
+                    {
+                        LoansList[person].Add(new Loan(book.Key, DateTime.Today));
+                        Console.WriteLine("Book loan successful!");
+                        break;
+                    }
+                    else
+                    {
+                        List<Loan> loans = new List<Loan>();
+                        loans.Add(new Loan(book.Key, DateTime.Today));
+                        LoansList.Add(person, loans);
+                        LibraryList[book.Key] -= 1;
+                        Console.WriteLine("Book loan successful!");
+                        break;
+                    }
                 }
             }
             //Console.WriteLine("There are no available copies for this book");
@@ -95,16 +117,8 @@ namespace LibraryProject
 
         public void ReturnBook(Person person, Book book)
         {
-            foreach(Loan loan in loans)
-            {
-                if(loan.Book.Name.Equals(book.Name) && loan.Person.Firstname.Equals(person.Firstname) && loan.Person.Lastname.Equals(person.Lastname))
-                {
-                   if(CheckForPenalty(loan))
-                    {
-                        AddPenalty(loan);
-                    }
-                }
-            }
+            
+            
         }
 
         bool CheckForPenalty(Loan loan)
@@ -115,9 +129,9 @@ namespace LibraryProject
 
         
 
-        void AddPenalty(Loan loan)
+        void AddPenalty(int days, Book book)
         {
-
+            double penalty = 0.01 * book.Price / days;
         }
     }
 }

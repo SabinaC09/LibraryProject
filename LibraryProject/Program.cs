@@ -15,7 +15,7 @@ namespace LibraryProject
             Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1236541256325");
 
             //add book to library 
-            Library library = new Library(new Dictionary<Book, int>(), new List<Loan>());
+            Library library = new Library(new Dictionary<Book, int>(), new Dictionary<Person, List<Loan>>());
             library.AddBookToLibrary("abc", "2547852000369", 120);
             library.AddBookToLibrary("abc", "2547852000369", 120);
             library.AddBookToLibrary("dddc", "aaaa", 120);
