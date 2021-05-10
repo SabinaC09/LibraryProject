@@ -12,7 +12,11 @@ namespace LibraryProject
         static void Main(string[] args)
         {
             //create person 
-            Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1236541256325");
+            Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1920828410021");
+            if (person1 != null)
+                Console.WriteLine("Person 1 cnp is valid");
+            else
+                Console.WriteLine("Person 1 cnp is invalid");
 
             //add book to library 
             Library library = new Library(new Dictionary<Book, int>(), new Dictionary<Person, List<Loan>>());
