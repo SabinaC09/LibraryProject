@@ -16,11 +16,7 @@ namespace LibraryProject
         public static bool CheckBookData(string isbn, double price)
         {
             bool hasOnlyNumbers = long.TryParse(isbn, out _);
-            bool hasOkLength = false;
-            if (isbn.Length == 13)
-                hasOkLength = true;
-            else
-                hasOkLength = false;
+            bool hasOkLength = isbn.Length == 13;
 
             if (!hasOnlyNumbers || !hasOkLength)
                 return false;

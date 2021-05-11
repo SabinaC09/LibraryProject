@@ -99,7 +99,39 @@ namespace LibraryProjectTests
             Assert.IsTrue(result);
         }
 
+        [TestMethod]
+        public void ReturnBook_NoPenalty()
+        {
+            Library library = new Library(new Dictionary<Book, int>(), new Dictionary<Person, List<Loan>>());
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            Book book = BookFactory.CreateBook("Test Book 1", "2547852000370", 230); 
 
+            Person person = PersonFactory.CreatePerson("Alexandru", "Popescu", "1900101411935");
+            library.LoanBook(person, book);
+
+            var result = library.ReturnBook(person, book);
+
+            Assert.AreEqual(result, 0);
+        }
+
+        [TestMethod]
+        public void ReturnBook_WithPenalty()
+        {
+            Library library = new Library(new Dictionary<Book, int>(), new Dictionary<Person, List<Loan>>());
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            library.AddBookToLibrary("Test Book 1", "2547852000370", 230);
+            Book book = BookFactory.CreateBook("Test Book 1", "2547852000370", 230);
+
+            Person person = PersonFactory.CreatePerson("Alexandru", "Popescu", "1900101411935");
+            library.LoanBook(person, book, DateTime.Today.AddDays(-19));
+
+            var result = library.ReturnBook(person, book);
+
+            Assert.AreEqual(result, 0.01 * book.Price * 5);
+        }
 
 
     }

@@ -30,16 +30,6 @@ namespace LibraryProject
 
         static bool CheckCnpData(string cnp)
         {
-            //int s = Int32.Parse(cnp.Substring(0, 1));
-            //int aa = Int32.Parse(cnp.Substring(1, 2));
-            //int ll = Int32.Parse(cnp.Substring(3, 2));
-            //int zz = Int32.Parse(cnp.Substring(5, 2));
-            //int jj = Int32.Parse(cnp.Substring(7, 2));
-            //int nnn = Int32.Parse(cnp.Substring(9, 3));
-
-            //if (Enumerable.Range(1, 8).Contains(s) && Enumerable.Range(0, 99).Contains(aa) && Enumerable.Range(1, 12).Contains(ll)
-            //    && Enumerable.Range(1, 31).Contains(zz) && Enumerable.Range(1, 48).Contains(jj) && Enumerable.Range(1, 999).Contains(nnn))
-            //{
             if(cnp.Length==13 && ValidateControlComponent(cnp))
                     return true;
             else 

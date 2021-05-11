@@ -13,10 +13,6 @@ namespace LibraryProject
         {
             //create person 
             Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1900101411935");
-            if (person1 != null)
-                Console.WriteLine("Person 1 cnp is valid");
-            else
-                Console.WriteLine("Person 1 cnp is invalid");
 
             //add book to library 
             Library library = new Library(new Dictionary<Book, int>(), new Dictionary<Person, List<Loan>>());
@@ -28,10 +24,11 @@ namespace LibraryProject
 
             //view books in the library
             library.ViewAllBooks();
-
             Console.WriteLine();
+
             //view available copies
             library.ViewCopies("2547852000369");
+            library.ViewCopies("2547852000360");
             Book book1 = BookFactory.CreateBook("abc", "2547852000369", 120);
             library.ViewCopies(book1);
             Console.WriteLine();
