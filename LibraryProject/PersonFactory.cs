@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
-    class PersonFactory
+    public class PersonFactory
     {
         public static Person CreatePerson(string firstname, string lastname, string cnp)
         {
             return CheckPersonData(firstname, lastname, cnp) ? new Person(firstname, lastname, cnp) : null; 
         }
 
-        static bool CheckPersonData(string firstname, string lastname, string cnp)
+        public static bool CheckPersonData(string firstname, string lastname, string cnp)
         {
             if (!Regex.IsMatch(firstname, @"^[a-zA-Z]+$"))
                 return false;

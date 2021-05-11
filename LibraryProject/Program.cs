@@ -12,7 +12,7 @@ namespace LibraryProject
         static void Main(string[] args)
         {
             //create person 
-            Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1920828410021");
+            Person person1 = PersonFactory.CreatePerson("Alexandru", "Popescu", "1900101411935");
             if (person1 != null)
                 Console.WriteLine("Person 1 cnp is valid");
             else
@@ -49,9 +49,7 @@ namespace LibraryProject
             library.ReturnBook(person1, book1);
             Console.WriteLine();
 
-            //No penalty to be paid. x2
-
-            //unit tests
+           
         }
 
 

@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
-    class BookFactory
+    public class BookFactory
     {
         public static Book CreateBook(string name, string isbn, double price)
         {
             return CheckBookData(isbn, price) ? new Book(name, isbn, price) : null;
         }
 
-        static bool CheckBookData(string isbn, double price)
+        public static bool CheckBookData(string isbn, double price)
         {
-            //validare date carte
-            if (int.TryParse(isbn, out _) || isbn.Length != 13)
+            bool hasOnlyNumbers = long.TryParse(isbn, out _);
+            bool hasOkLength = false;
+            if (isbn.Length == 13)
+                hasOkLength = true;
+            else
+                hasOkLength = false;
+
+            if (!hasOnlyNumbers || !hasOkLength)
                 return false;
             else if (price <= 0 || price > 500)
                 return false;

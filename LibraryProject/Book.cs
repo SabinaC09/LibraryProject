@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
-    class Book
+    public class Book
     {
         private String name;
         private String isbn;

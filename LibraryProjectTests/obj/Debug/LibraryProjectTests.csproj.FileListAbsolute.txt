@@ -1,0 +1,17 @@
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\LibraryProjectTests.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\LibraryProjectTests.pdb
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\obj\Debug\LibraryProjectTests.csprojAssemblyReference.cache
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\obj\Debug\LibraryProjectTests.csproj.CoreCompileInputs.cache
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\obj\Debug\LibraryProjectTests.csproj.CopyComplete
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\obj\Debug\LibraryProjectTests.dll
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\obj\Debug\LibraryProjectTests.pdb
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\LibraryProject.exe
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\LibraryProject.pdb
+C:\Users\Sabina\source\repos\LibraryProject\LibraryProjectTests\bin\Debug\LibraryProject.exe.config
