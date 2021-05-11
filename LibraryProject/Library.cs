@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
-    class Library
+    public class Library
     {
         private Dictionary<Book, int> library;
         private Dictionary<Person, List<Loan>> loans;
         
 
-        internal Dictionary<Book, int> LibraryList { get => library; set => library = value; }
-        internal Dictionary<Person, List<Loan>> LoansList { get => loans; set => loans = value; }
+        public Dictionary<Book, int> LibraryList { get => library; set => library = value; }
+        public  Dictionary<Person, List<Loan>> LoansList { get => loans; set => loans = value; }
 
         public Library(Dictionary<Book, int> library, Dictionary<Person, List<Loan>> loans)
         {
@@ -182,7 +182,7 @@ namespace LibraryProject
                 Console.WriteLine("No penalty to be paid.");  
         }
 
-        bool CheckIfNotAlreadyLoaned(Person person, Book book)
+        public bool CheckIfNotAlreadyLoaned(Person person, Book book)
         {
             foreach (Loan loan in LoansList[person].ToList())
             {

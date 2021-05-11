@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
-    class Loan
+    public class Loan
     {
         private Book book;
         private DateTime loadDate;
